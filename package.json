@@ -1,0 +1,23 @@
+{
+  "name": "flashloan_arbitrage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjwarren44/flashloan-arbitrage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjwarren44/flashloan-arbitrage/issues"
+  },
+  "homepage": "https://github.com/jjwarren44/flashloan-arbitrage#readme",
+  "dependencies": {
+    "web3": "^1.6.0"
+  }
+}
