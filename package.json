@@ -1,28 +1,32 @@
 {
-  "name": "flashloan_arbitrage",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jjwarren44/flashloan-arbitrage.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jjwarren44/flashloan-arbitrage/issues"
-  },
-  "homepage": "https://github.com/jjwarren44/flashloan-arbitrage#readme",
-  "dependencies": {
-    "@ethersproject/solidity": "^5.5.0",
-    "@studydefi/money-legos": "^2.4.2",
-    "@uniswap/sdk": "^3.0.3",
-    "dotenv": "^10.0.0",
-    "ethers": "^5.5.1",
-    "web3": "^1.6.0"
-  }
+    "name": "flashloan_arbitrage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jjwarren44/flashloan-arbitrage.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jjwarren44/flashloan-arbitrage/issues"
+    },
+    "homepage": "https://github.com/jjwarren44/flashloan-arbitrage#readme",
+    "dependencies": {
+        "@ethersproject/solidity": "^5.5.0",
+        "@studydefi/money-legos": "^2.4.2",
+        "@truffle/hdwallet-provider": "^1.5.1",
+        "@uniswap/sdk": "^3.0.3",
+        "dotenv": "^10.0.0",
+        "ethers": "^5.5.1",
+        "web3": "^1.6.0"
+    },
+    "engines": {
+        "node": "12.x"
+    }
 }

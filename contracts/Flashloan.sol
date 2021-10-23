@@ -39,7 +39,7 @@ contract Flashloan is ICallee, DydxFlashloanBase {
         address wethAddress,
         address daiAddress,
         address beneficiaryAddress
-    ) {
+    ) public {
         kyber = IKyberNetworkProxy(kyberAddress);
         uniswap = IUniswapV2Router02(uniswapAddress);
         weth = IWeth(wethAddress);
@@ -57,7 +57,7 @@ contract Flashloan is ICallee, DydxFlashloanBase {
         ArbInfo memory arbInfo = abi.decode(data, (ArbInfo));
         uint256 balanceDai = dai.balanceOf(address(this));
 
-        if (arbInfo.direction = Direction.KyberToUniswap) {
+        if (arbInfo.direction == Direction.KyberToUniswap) {
             // buy ETH on kyber
             dai.approve(address(kyber), balanceDai);
             (uint expectedRate, ) = kyber.getExpectedRate(
@@ -85,7 +85,7 @@ contract Flashloan is ICallee, DydxFlashloanBase {
             path[0] = address(dai);
             path[1] = address(weth);
             uint[] memory minOuts = uniswap.getAmountsOut(balanceDai, path);
-            uniswap.swapExactTokensForEth(
+            uniswap.swapExactTokensForETH(
                 balanceDai,
                 minOuts[1],
                 path,
@@ -107,11 +107,11 @@ contract Flashloan is ICallee, DydxFlashloanBase {
         }
 
         require(
-            dai.balanceoOf(address(this)) >= arbInfo.repayAmount, 
+            dai.balanceOf(address(this)) >= arbInfo.repayAmount, 
             "Not enough funds to repay DyDx loan"
         );
 
-        uint profit = dai.balanceoOf(address(this)) - arbInfo.repayAmount;
+        uint profit = dai.balanceOf(address(this)) - arbInfo.repayAmount;
         dai.transfer(beneficiary, profit);
 
         emit NewArbitrage(arbInfo.direction, profit, now);
